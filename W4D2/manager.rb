@@ -1,10 +1,8 @@
 require_relative "employee.rb"
 class Manager < Employee
 
-    
-
     def initialize(name, title, salary, boss = nil)
-        super (name, title, salary, boss)
+        super(name, title, salary, boss = nil)
         @employees = []
     end
 
@@ -19,6 +17,10 @@ class Manager < Employee
             sum += employee.salary 
         end
         sum
+    end
+
+    def add_employee(worker)
+      @employees << worker
     end
 
     private
