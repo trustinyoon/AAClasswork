@@ -1,10 +1,10 @@
 class Employee
 
-    def initialize(title, salary, boss)
+    def initialize(name, title, salary, boss = nil)
+        @name = name
         @title = title   
-        @boss = Manager.new()
         @salary = salary
-        
+        @boss = boss
     end
 
     def bonus(multiplier)
@@ -14,5 +14,10 @@ class Employee
 
 
 
+
+
+
+    private
+    attr_reader :boss, :name, :title, :salary
 
 end

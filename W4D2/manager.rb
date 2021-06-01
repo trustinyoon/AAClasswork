@@ -3,8 +3,8 @@ class Manager < Employee
 
     
 
-    def initialize(title, salary, boss)
-        super (title, salary, boss)
+    def initialize(name, title, salary, boss = nil)
+        super (name, title, salary, boss)
         @employees = []
     end
 
