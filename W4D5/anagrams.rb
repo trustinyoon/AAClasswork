@@ -24,3 +24,45 @@ end
 # p first_anagram?("ben", "neb")    #=> true
 # p first_anagram?("trustin", "nitsurt")    #=> true
 
+def third_anagram?(str_1,str_2)
+  str_1.sort == str_2.sort
+end
+
+# p first_anagram?("gizmo", "sally")    #=> false
+# p first_anagram?("elvis", "lives")    #=> true
+# p first_anagram?("ben", "neb")    #=> true
+# p first_anagram?("trustin", "nitsurt")    #=> true
+
+def fourth_anagram(str_1,str_2)
+  hash1 = Hash.new(0)
+  hash2 = Hash.new(0)
+
+  str_1.each_char do |char|
+    hash1[char]+=1
+  end
+
+  str_2.each_char do |char|
+    hash2[char]+=1
+  end
+
+  hash1==hash2
+end
+
+# def fourth_anagram(str_1,str_2)
+#   hash1 = Hash.new(0)
+
+#   str_1.each_char do |char|
+#     hash1[char]+=1
+#   end
+
+#   str_2.each_char do |char|
+#     hash1[char]-=1
+#   end
+
+#   hash1.values.all? {|val| val == 0}
+# end
+
+p first_anagram?("gizmo", "sally")    #=> false
+p first_anagram?("elvis", "lives")    #=> true
+p first_anagram?("ben", "neb")    #=> true
+p first_anagram?("trustin", "nitsurt")    #=> true
