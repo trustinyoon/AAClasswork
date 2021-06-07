@@ -1,0 +1,46 @@
+body {
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.ingredients-list {
+  list-style: square inside;
+}
+
+header > img {
+    width: 100px;
+}
+
+html {
+    background-color: peachpuff;
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input:last-child {
+    background-color: gold;
+}
+
+input[type=radio] {
+    cursor: pointer;
+    outline: none;
+}
+
+ol li:nth-child(even) {
+    background-color: lightgray;
+}
+
+section#reviews + .user_review {
+    border-top: solid 1px black;
+}
