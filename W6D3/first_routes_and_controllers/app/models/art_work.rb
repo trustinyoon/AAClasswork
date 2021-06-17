@@ -1,3 +1,4 @@
+
 class ArtWork < ApplicationRecord
     validates :title, presence: true
     validates :image_url, presence: true
@@ -9,7 +10,7 @@ class ArtWork < ApplicationRecord
 
     has_many :artwork_shares,
         foreign_key: :artwork_id,
-        class_name: :ArtWorkShare
+        class_name: :ArtworkShare
 
     has_many :shared_viewers,
         through: :artwork_shares,
