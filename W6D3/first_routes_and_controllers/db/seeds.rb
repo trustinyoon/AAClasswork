@@ -6,20 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all
-user1 = User.create({username: 'nicha'})
-user2 = User.create({username: 'trustin'})
-user3 = User.create({username: 'charis'})
-user4 = User.create({username: 'acye'})
-user5 = User.create({username: 'walker'})
+ActiveRecord::Base.transaction do
 
-ArtWork.delete_all
-artwork1 = ArtWork.create({title: 'A', image_url: 'a@', artist_id: user1.id})
-artwork2 = ArtWork.create({title: 'B', image_url: 'b@', artist_id: user2.id})
-artwork3 = ArtWork.create({title: 'C', image_url: 'c@', artist_id: user3.id})
-artwork4 = ArtWork.create({title: 'D', image_url: 'd@', artist_id: user4.id})
+    User.destroy_all
+    Artwork.destroy_all
+    ArtworkShare.destroy_all
 
 
-ArtworkShare.delete_all
-artwork_shares = ArtworkShare.create({artwork_id: artwork1.id, viewer_id: user1.id})
+    #Artists
+    mike = User.create!({name: "Mike", email: "mike@gmail.com"})
+    kiet = User.create!({name: "Kiet", email: "kiet@gmail.com" })
+    joe = User.create!({name: "Joe", email: "joe@gmail.com" })
 
+    #Viewers
+    coco = User.create!({name: "Coco", email: "coco@gmail.com"})
+    nana = User.create!({name: "Nana", email: "Nana@gmail.com" })
+    waffle = User.create!({name: "Waffle", email: "Waffle@gmail.com" })
+
+    #Artwork
+    art1 = Artwork.create!({title: "Masterpiece", image_url: "maspeace.com", artist_id: mike.id})
+    art2 = Artwork.create!({title: "Mona Lisa", image_url: "monalisa.com", artist_id: mike.id})
+    art3 = Artwork.create!({title: "Crayon Drawing", image_url: "crayon.com", artist_id: kiet.id})
+    art4 = Artwork.create!({title: "Pier", image_url: "pier.com", artist_id: kiet.id})
+    art5 = Artwork.create!({title: "Big Sur", image_url: "bigsur.com", artist_id: joe.id})
+    art6 = Artwork.create!({title: "Birds", image_url: "birds.com", artist_id: joe.id})
+
+    #Artwork Shares
+    art_shares1 = ArtworkShare.create!({artwork_id: art1.id, viewer_id: coco.id})
+    art_shares2 = ArtworkShare.create!({artwork_id: art2.id, viewer_id: coco.id})
+    art_shares3 = ArtworkShare.create!({artwork_id: art3.id, viewer_id: nana.id})
+    art_shares4 = ArtworkShare.create!({artwork_id: art4.id, viewer_id: nana.id})
+    art_shares5 = ArtworkShare.create!({artwork_id: art5.id, viewer_id: waffle.id})
+    art_shares6 = ArtworkShare.create!({artwork_id: art6.id, viewer_id: waffle.id})
+
+end
