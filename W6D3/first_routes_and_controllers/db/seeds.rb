@@ -9,27 +9,27 @@
 ActiveRecord::Base.transaction do
 
     User.destroy_all
-    Artwork.destroy_all
+    ArtWork.destroy_all
     ArtworkShare.destroy_all
 
 
     #Artists
-    mike = User.create!({name: "Mike", email: "mike@gmail.com"})
-    kiet = User.create!({name: "Kiet", email: "kiet@gmail.com" })
-    joe = User.create!({name: "Joe", email: "joe@gmail.com" })
+    mike = User.create!({username: "Mike"})
+    kiet = User.create!({username: "Kiet"})
+    joe = User.create!({username: "Joe"})
 
     #Viewers
-    coco = User.create!({name: "Coco", email: "coco@gmail.com"})
-    nana = User.create!({name: "Nana", email: "Nana@gmail.com" })
-    waffle = User.create!({name: "Waffle", email: "Waffle@gmail.com" })
+    coco = User.create!({username: "Coco"})
+    nana = User.create!({username: "Nana"})
+    waffle = User.create!({username: "Waffle"})
 
     #Artwork
-    art1 = Artwork.create!({title: "Masterpiece", image_url: "maspeace.com", artist_id: mike.id})
-    art2 = Artwork.create!({title: "Mona Lisa", image_url: "monalisa.com", artist_id: mike.id})
-    art3 = Artwork.create!({title: "Crayon Drawing", image_url: "crayon.com", artist_id: kiet.id})
-    art4 = Artwork.create!({title: "Pier", image_url: "pier.com", artist_id: kiet.id})
-    art5 = Artwork.create!({title: "Big Sur", image_url: "bigsur.com", artist_id: joe.id})
-    art6 = Artwork.create!({title: "Birds", image_url: "birds.com", artist_id: joe.id})
+    art1 = ArtWork.create!({title: "Masterpiece", image_url: "maspeace.com", artist_id: mike.id})
+    art2 = ArtWork.create!({title: "Mona Lisa", image_url: "monalisa.com", artist_id: mike.id})
+    art3 = ArtWork.create!({title: "Crayon Drawing", image_url: "crayon.com", artist_id: kiet.id})
+    art4 = ArtWork.create!({title: "Pier", image_url: "pier.com", artist_id: kiet.id})
+    art5 = ArtWork.create!({title: "Big Sur", image_url: "bigsur.com", artist_id: joe.id})
+    art6 = ArtWork.create!({title: "Birds", image_url: "birds.com", artist_id: joe.id})
 
     #Artwork Shares
     art_shares1 = ArtworkShare.create!({artwork_id: art1.id, viewer_id: coco.id})
