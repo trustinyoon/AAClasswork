@@ -223,7 +223,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
-  capybara (>= 2.15)
+  capybara
   chromedriver-helper
   coffee-rails (~> 4.2)
   factory_bot_rails
@@ -250,4 +250,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   2.2.17
+   2.2.19
