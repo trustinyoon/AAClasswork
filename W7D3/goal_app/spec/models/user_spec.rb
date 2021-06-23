@@ -32,6 +32,21 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "find_by_credentials" do
+    let!(:user) { create(:user) }
+
+    context "with valid credentials" do
+      it "should return the user" do
+        expect(User.find_by_credentials(user.username, "123456")).to eq(:user)
+      end
+    end
+
+    context "with invalid credentials" do
+      it "should return nil" do
+        expect(User.find_by_credentials(user.username, "123457")).to eq(nil)
+      end
+    end
+  end
   
 
 end
