@@ -17,7 +17,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST #create" do
     before :each do
-      allow(subject).to receive(:log_in!).and_return(true)
+      allow(subject).to receive(:login!).and_return(true)
     end
 
     let(:valid_params) {{ user: { username: 'trustin', password: '123456'} }}

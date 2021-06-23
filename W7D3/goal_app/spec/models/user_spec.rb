@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
 
     context "with valid credentials" do
       it "should return the user" do
-        expect(User.find_by_credentials(user.username, "123456")).to eq(:user)
+        expect(User.find_by_credentials(user.username, "123456")).to eq(user)
       end
     end
 
@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
       end
     end
   end
-  
+
 
 end
 
