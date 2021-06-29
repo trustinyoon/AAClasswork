@@ -49,4 +49,4 @@ Array.prototype.transpose = function () {
   return arr;
 }
 
-console.log([[0, 1], [2, 3]].transpose()); // => [[0,2],[1,3]]
+// console.log([[0, 1], [2, 3]].transpose()); // => [[0,2],[1,3]]
