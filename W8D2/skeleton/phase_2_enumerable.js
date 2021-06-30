@@ -10,7 +10,7 @@ function addOne(num) {
 
 // ------------------------------------------------------------------------
 
-Array.prototype.myMap = function (callback) {
+Array.prototype.myMap = function(callback) {
   let arr = [];
 
   this.myEach(el => arr.push(callback(el)))
@@ -22,3 +22,12 @@ Array.prototype.myMap = function (callback) {
 
 // ------------------------------------------------------------------------
 
+Array.prototype.myReduce = function(callback[, initialValue]) {
+    let value = this[0]
+    
+    if (initialValue) {
+        value === initialValue
+    }
+    
+    
+}
