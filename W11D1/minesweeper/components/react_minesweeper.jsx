@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './game';
+import Tile from './tile'
 
 function Root() {
   return (
