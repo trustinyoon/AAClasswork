@@ -3,10 +3,20 @@ import React from "react";
 export default class Tile extends React.Component{
     constructor(props){
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+      
     }
 
-    handleClick() {
-      this.props.updateGame();
+   
+    handleClick(e) {
+        // this.props.updateGame(this.props.tile, this.props.tile.flagged||this.props.tile.explored);
+       
+        if(e.altKey){
+            console.log('click and press')
+        }else{
+            console.log('click')
+        }
+        
     }
     
     render() {
@@ -25,8 +35,8 @@ export default class Tile extends React.Component{
       }
 
       return(
-        <div className={tileClass}>{tileIcon}</div>
+        <div onClick={this.handleClick} className={tileClass}>{tileIcon}</div>
       );
     }
-    
+
 }
