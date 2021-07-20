@@ -24,11 +24,17 @@
 .flagged {
   border-style: outset;
   background-color: lightgray;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
 }
 
 .explored {
   border-style: inset;
   background-color: lightgray;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
 }
 
 

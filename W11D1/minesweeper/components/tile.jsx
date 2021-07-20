@@ -12,9 +12,9 @@ export default class Tile extends React.Component{
         // this.props.updateGame(this.props.tile, this.props.tile.flagged||this.props.tile.explored);
        
         if(e.altKey){
-            console.log('click and press')
+            this.props.updateGame(this.props.tile, true);
         }else{
-            console.log('click')
+            this.props.updateGame(this.props.tile, false);
         }
         
     }
